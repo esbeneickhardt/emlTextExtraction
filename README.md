@@ -1,6 +1,6 @@
 # Introduction
 
-The environment to run this code is setup in a docker image, while the code to extract attachments and text from e-mails is setup in a jupyter notebook.
+The environment to run this code is set up in a docker image, while the code to extract attachments and text from e-mails is setup in a jupyter notebook.
 
 # Prerequsites
 You need to have Docker installed!
