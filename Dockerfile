@@ -38,6 +38,10 @@ WORKDIR /emlTextExtraction
 # Copying code etc. into workspace
 COPY . /emlTextExtraction
 
+# Copying example notebook
+RUN mkdir -p /mnt/notebooks
+COPY ./Notebook/* /mnt/notebooks
+
 # Installing prerequisites for textract
 RUN apt update --fix-missing
 RUN apt-get install -y libxml2-dev libxslt1-dev antiword unrtf poppler-utils pstotext tesseract-ocr flac ffmpeg 
@@ -54,5 +58,6 @@ RUN cd libraries_python && tar xf textract-1.6.3.tar.gz && cd textract-1.6.3 && 
 RUN apt -y build-dep imagemagick
 RUN cd libraries_debian && tar xf ImageMagick.tar.gz && cd ImageMagick-7* && ./configure && make && make install && ldconfig /usr/local/lib && cd .. && rm -r ImageMagick-7*
 
-# Adding module to system path
-RUN python3 -c "import sys;sys.path.append('./modules/')"
+# Run app when container starts
+EXPOSE 6969
+CMD jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --port=6969 --notebook-dir='/mnt/notebooks'
