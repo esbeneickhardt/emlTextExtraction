@@ -39,8 +39,8 @@ WORKDIR /emlTextExtraction
 COPY . /emlTextExtraction
 
 # Copying example notebook
-RUN mkdir -p /mnt/notebooks
-COPY ./notebook/* /mnt/notebooks/
+RUN mkdir -p /mnt/notebook
+COPY ./notebook/* /mnt/notebook/
 
 # Installing prerequisites for textract
 RUN apt update --fix-missing
@@ -60,4 +60,4 @@ RUN cd libraries_debian && tar xf ImageMagick.tar.gz && cd ImageMagick-7* && ./c
 
 # Run app when container starts
 EXPOSE 6969
-CMD jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --port=6969 --notebook-dir='/mnt/notebooks'
+CMD jupyter notebook --ip 0.0.0.0 --no-browser --allow-root --port=6969 --notebook-dir='/mnt/notebook'
