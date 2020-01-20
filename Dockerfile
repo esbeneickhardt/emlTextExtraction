@@ -40,7 +40,7 @@ COPY . /emlTextExtraction
 
 # Copying example notebook
 RUN mkdir -p /mnt/notebooks
-COPY ./Notebook/* /mnt/notebooks
+COPY ./notebook/* /mnt/notebooks/
 
 # Installing prerequisites for textract
 RUN apt update --fix-missing

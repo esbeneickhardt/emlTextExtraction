@@ -18,4 +18,4 @@ Start the container by running **docker run -it -p 6969:6969 -v /local/folder/wi
 This code starts up the container and makes jupyter availible through the browser at your local host. Docker should return the adress to type into your browser.
 
 # Extracting text from eml-files
-You simply start up the example [Jupyter Notebook](https://github.com/esbeneickhardt/emlTextExtraction/notebook/) and it illustrates how things work.
+You simply start up the example [Jupyter Notebook](https://github.com/esbeneickhardt/emlTextExtraction/tree/master/notebook) and it illustrates how things work.
