@@ -2,7 +2,7 @@ jupyter==1.0.0
 pdfminer3k
 datefinder==0.7.0
 jupyterthemes==0.20.0
-numpy==1.17.2
+numpy==1.22.0
 nltk==3.4.5
 sklearn==0.0
 xgboost==0.90
